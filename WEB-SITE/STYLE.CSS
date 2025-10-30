@@ -1,0 +1,1286 @@
+/* 🌸 TORI HANA — Estilo Final: Vibrante, Animado, 100% Responsive */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Kaisei+Tokumin:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --fondo-crema: #fdf6f0;
+  --rojo: #b71c1c;
+  --rojo-claro: #d32f2f;
+  --dorado: #d4af37;
+  --dorado-claro: #e6c25d;
+  --blanco: #ffffff;
+  --texto: #2d2d2d;
+  --gris-claro: #f8f5f0;
+  --gris-medio: #e0e0e0;
+  --sombra-suave: rgba(183, 28, 28, 0.08);
+  --sombra-media: rgba(183, 28, 28, 0.15);
+  --sombra-fuerte: rgba(183, 28, 28, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--fondo-crema);
+  color: var(--texto);
+  overflow-x: hidden;
+  line-height: 1.6;
+  scroll-padding-top: 70px;
+  width: 100%;
+}
+
+main {
+  padding-top: 70px;
+  width: 100%;
+}
+
+/* 🌀 PRELOADER */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--fondo-crema);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mascota-preloader {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1.2rem;
+  animation: pulsePreloader 2s infinite;
+}
+
+.mascota-preloader img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--rojo);
+  box-shadow: 0 8px 20px var(--sombra-media);
+}
+
+.preloader p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: var(--rojo);
+  letter-spacing: 1px;
+}
+
+/* 🔴 HEADER - SIN TELÉFONO */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--rojo);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  height: 70px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logo-img {
+  height: 100%;
+  width: auto;
+  border-radius: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--blanco);
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--dorado);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.menu a:hover {
+  color: var(--dorado);
+}
+
+/* ❌ TELÉFONO TOTALMENTE ELIMINADO - SOLO MENÚ TOGGLE */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--blanco);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 🌸 HERO - CON HOJAS ROSADAS */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 5%;
+  text-align: center;
+  gap: 2rem;
+  background: var(--fondo-crema);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🍃 HOJAS ROSADAS CAYENDO */
+.leaves-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.leaf {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #f8e0dc;
+  border-radius: 50% 0 50% 50%;
+  opacity: 0.7;
+  animation: fall linear infinite;
+}
+
+.hero-content {
+  max-width: 600px;
+  animation: fadeInUp 1s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--rojo);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  margin-bottom: 1.8rem;
+  color: var(--texto);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* 🍜 IMAGEN DEL BOWL SIN CUADRO */
+.bowl-animated {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.bowl-animated:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* 🍣 SECCIONES */
+.section {
+  padding: 5rem 0;
+  width: 100%;
+}
+
+.section.bg-light {
+  background: var(--gris-claro);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--dorado);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--texto);
+  max-width: 650px;
+  margin: 1rem auto 0;
+}
+
+.highlight {
+  color: var(--rojo);
+}
+
+/* 🍣 MENÚ TABS */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 0.6rem 1.6rem;
+  background: rgba(183, 28, 28, 0.1);
+  border: 2px solid var(--rojo);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--rojo);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(183, 28, 28, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.tab-btn:hover::before {
+  left: 100%;
+}
+
+.tab-btn.active {
+  background: var(--rojo);
+  color: white;
+  box-shadow: 0 6px 16px var(--sombra-media);
+  transform: translateY(-4px);
+}
+
+.menu-content {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.menu-tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.menu-tab-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.menu-card {
+  background: var(--blanco);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px var(--sombra-suave);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.menu-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 18px 40px var(--sombra-media);
+  z-index: 10;
+}
+
+.menu-image {
+  height: 190px;
+  overflow: hidden;
+}
+
+.menu-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.menu-card:hover .menu-image img {
+  transform: scale(1.2);
+}
+
+.menu-info {
+  padding: 1.6rem;
+  text-align: center;
+}
+
+.menu-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+  color: var(--rojo);
+}
+
+.menu-info p {
+  color: var(--texto);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.menu-price {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--rojo);
+}
+
+/* 📸 GALERÍA: 3 ARRIBA, 3 ABAJO */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: 0 6px 16px var(--sombra-suave);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(212, 175, 55, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.15);
+}
+
+/* 🎁 PROMOCIONES: 2 ARRIBA, 2 ABAJO */
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.promo-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px var(--sombra-suave);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.promo-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px var(--sombra-media);
+}
+
+.promo-image {
+  height: 170px;
+  overflow: hidden;
+}
+
+.promo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.promo-card:hover .promo-image img {
+  transform: scale(1.15);
+}
+
+.promo-content {
+  padding: 1.6rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.promo-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+  color: var(--rojo);
+}
+
+.promo-content p {
+  margin-bottom: 1rem;
+  color: var(--texto);
+  font-size: 0.95rem;
+}
+
+.promo-price {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--rojo);
+  margin: auto 0 1.2rem;
+}
+
+.promo-1 { background: #fff5f5; }
+.promo-2 { background: #f8fdf8; }
+.promo-3 { background: #fffdf5; }
+.promo-4 { background: #f9f7e8; }
+
+/* 🖌️ BOTONES - VIBRANTES Y ANIMADOS */
+.btn-primary,
+.btn-secondary,
+.btn-special,
+.btn-small {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  min-width: 150px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  border: none;
+  box-shadow: 0 4px 12px var(--sombra-suave);
+}
+
+/* ✅ BOTÓN PRIMARIO: ROJO VIBRANTE */
+.btn-primary {
+  background: var(--rojo);
+  color: white;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s;
+}
+
+.btn-primary:hover {
+  background: var(--rojo-claro);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px var(--sombra-fuerte);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* ✅ BOTÓN SECUNDARIO: DORADO BRILLANTE */
+.btn-secondary {
+  background: var(--dorado);
+  color: var(--rojo);
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.6s;
+}
+
+.btn-secondary:hover {
+  background: var(--dorado-claro);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+}
+
+.btn-secondary:hover::before {
+  left: 100%;
+}
+
+/* ✅ BOTÓN "VER MENÚ COMPLETO" - CENTRADO Y DORADO */
+.text-center.mt-4 {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem !important;
+}
+
+.text-center.mt-4 .btn-special {
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  color: #b71c1c;
+  font-weight: 700;
+  padding: 0.8rem 2.2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-center.mt-4 .btn-special::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.6s;
+}
+
+.text-center.mt-4 .btn-special:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
+}
+
+.text-center.mt-4 .btn-special:hover::before {
+  left: 100%;
+}
+
+/* ✅ BOTÓN "MÁS SOBRE TORIKI" - ROJO INTENSO */
+.mascota-info .btn-special {
+  background: linear-gradient(135deg, #b71c1c, #8b0000);
+  color: white;
+  box-shadow: 0 6px 15px rgba(183, 28, 28, 0.4);
+}
+
+.mascota-info .btn-special:hover {
+  box-shadow: 0 10px 25px rgba(183, 28, 28, 0.6);
+}
+
+/* 📝 SOBRE NOSOTROS */
+.about-content {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 420px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px var(--sombra-suave);
+  transition: transform 0.5s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.06) rotate(1deg);
+}
+
+/* 🐾 MASCOTA */
+.mascota-content {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px var(--sombra-suave);
+  transition: transform 0.5s ease;
+  flex-wrap: wrap;
+}
+
+.mascota-content:hover {
+  transform: translateY(-8px);
+}
+
+.mascota-image {
+  flex: 1;
+  min-width: 220px;
+  max-width: 240px;
+  display: flex;
+  justify-content: center;
+}
+
+.toriki-animated {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--rojo);
+  box-shadow: 0 10px 25px var(--sombra-media);
+  animation: pulseToriki 2.5s infinite;
+}
+
+.mascota-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.mascota-info h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.9rem;
+  color: var(--rojo);
+}
+
+.mascota-info p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+/* 📜 HISTORIA */
+.history-timeline {
+  max-width: 750px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.history-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: var(--rojo);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 2.5rem;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-year {
+  width: 90px;
+  height: 90px;
+  background: var(--rojo);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  box-shadow: 0 6px 16px var(--sombra-media);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.timeline-item:hover .timeline-year {
+  transform: scale(1.15) rotate(8deg);
+  box-shadow: 0 10px 25px var(--sombra-fuerte);
+}
+
+.timeline-content {
+  flex: 1;
+  background: var(--blanco);
+  padding: 1.6rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px var(--sombra-suave);
+  margin-left: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateX(10px);
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: 0;
+  margin-right: 1.5rem;
+}
+
+.timeline-item:nth-child(odd):hover .timeline-content {
+  transform: translateX(-10px);
+}
+
+/* 📩 RESERVAS */
+.reservation-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.reservation-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--rojo);
+}
+
+.hours-list {
+  list-style: none;
+}
+
+.hours-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--gris-medio);
+  font-size: 1.05rem;
+}
+
+.hours-list span {
+  font-weight: 700;
+  color: var(--rojo);
+}
+
+.reservation-form {
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px var(--sombra-suave);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid var(--gris-medio);
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--rojo);
+  box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.2);
+  transform: scale(1.02);
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.half {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.map-full {
+  margin-top: 2.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px var(--sombra-suave);
+  height: 280px;
+}
+
+.map-full iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ⚫ FOOTER */
+.footer {
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 3rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.footer-col h3::after,
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 35px;
+  height: 3px;
+  background: var(--dorado);
+  border-radius: 2px;
+}
+
+.footer-col p,
+.footer-col ul li {
+  opacity: 0.95;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.footer-col ul li i {
+  margin-right: 0.6rem;
+  color: var(--dorado);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.social-links a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--dorado);
+  color: var(--rojo);
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* 📱 RESPONSIVE COMPLETO */
+@media (max-width: 768px) {
+  main {
+    padding-top: 60px;
+  }
+
+  .header {
+    height: 60px;
+    padding: 0.6rem 5%;
+  }
+
+  .logo {
+    height: 36px;
+  }
+
+  .menu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    background: var(--rojo);
+    flex-direction: column;
+    width: 190px;
+    padding: 1.2rem 0;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 6px 16px var(--sombra-media);
+    z-index: 1000;
+  }
+
+  .menu.active ul {
+    display: flex;
+  }
+
+  .menu ul li {
+    width: 100%;
+    text-align: center;
+    margin: 0.6rem 0;
+  }
+
+  .menu ul li a {
+    color: white;
+    font-size: 1.05rem;
+  }
+
+  /* ✅ BOTÓN HAMBURGUESA SIEMPRE VISIBLE EN MÓVILES */
+  .menu-toggle {
+    display: flex !important;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .section-title {
+    font-size: 2.1rem;
+  }
+
+  .menu-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-btn {
+    width: 100%;
+    max-width: 220px;
+    margin: 0.3rem 0;
+  }
+
+  /* 📸 GALERÍA EN MÓVIL: 2 COLUMNAS */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 🎁 PROMOCIONES EN MÓVIL: 1 COLUMNA */
+  .promo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content,
+  .mascota-content,
+  .reservation-container {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .map-full {
+    height: 220px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+  }
+
+  .bowl-animated {
+    max-width: 95vw;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  /* 📸 GALERÍA EN MÓVIL PEQUEÑO: 1 COLUMNA */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-full {
+    height: 180px;
+  }
+}
+
+/* 🌀 ANIMACIONES GLOBALES */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌀 ANIMACIÓN DE TEXTO AL HACER SCROLL */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Aplicar a secciones clave */
+.section-header,
+.about-text,
+.mascota-info,
+.reservation-info,
+.footer-col {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-header.visible,
+.about-text.visible,
+.mascota-info.visible,
+.reservation-info.visible,
+.footer-col.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatBowl {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes pulseToriki {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pulsePreloader {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10%) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+}
+/* ✅ BOTONES DE PROMOCIONES: ROJO VIBRANTE CON ANIMACIÓN */
+.promo-content .btn-small {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  background: var(--rojo);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 10px var(--sombra-suave);
+  position: relative;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.promo-content .btn-small::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s;
+}
+
+.promo-content .btn-small:hover {
+  background: var(--rojo-claro);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 20px var(--sombra-media);
+}
+
+.promo-content .btn-small:hover::before {
+  left: 100%;
+}

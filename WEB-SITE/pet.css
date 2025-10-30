@@ -1,0 +1,152 @@
+/* 🌸 Estilo general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #fff7f0, #ffeef5);
+  color: #3a3a3a;
+  text-align: center;
+  padding: 50px 20px;
+  line-height: 1.7;
+  animation: fadeIn 1.2s ease;
+}
+
+/* 🏮 Título principal */
+h1 {
+  color: #d84b63;
+  font-size: 2.6rem;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 8px rgba(216, 75, 99, 0.2);
+  letter-spacing: 1px;
+  animation: slideDown 1.2s ease;
+}
+
+/* 🐔 Imagen principal (Toriki) */
+.mascota-principal {
+  width: 220px;
+  border-radius: 50%;
+  border: 6px solid #f9b6c0;
+  margin: 20px 0 35px;
+  animation: flotar 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.mascota-principal:hover {
+  transform: scale(1.08);
+}
+
+/* ✨ Textos */
+p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #e26a86;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* 🎨 Bloques de proceso */
+.proceso-creativo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+/* 🖼️ Cada bloque */
+.bloque-imagen {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1.2s ease;
+}
+
+.bloque-imagen:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.bloque-imagen p {
+  color: #c94b59;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.bloque-imagen img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.bloque-imagen img:hover {
+  transform: scale(1.05);
+}
+
+/* 🔙 Botón volver */
+.btn-volver {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 14px 35px;
+  background: linear-gradient(90deg, #ff7f91, #e6425e);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(230, 66, 94, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #e6425e, #ff7f91);
+  box-shadow: 0 8px 20px rgba(230, 66, 94, 0.4);
+}
+
+/* 🌿 Animaciones */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .bloque-imagen {
+    width: 90%;
+  }
+}
+
+  

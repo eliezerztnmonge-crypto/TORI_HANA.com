@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tori Hana — Restaurante japonés premium en San Salvador. Ramen artesanal, bento fresco, yakitori y más." />
+  <title>Tori Hana | Cocina Japonesa con Alma</title>
+  <link rel="shortcut icon" href="/SOLO.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Kaisei+Tokumin:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="STYLE.CSS" />
+</head>
+<body id="body">
+  <!-- 🌀 PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="mascota-preloader">
+      <img src="/SOLO.png" alt="Toriki, mascota de Tori Hana">
+    </div>
+    <p>Bienvenido a Tori Hana!</p>
+  </div>
+
+  <!-- 🔴 NAVBAR  -->
+  <header class="header" id="header">
+    <div class="logo">
+      <a href="#inicio">
+        <img src="/toriki sin fondoo.png" alt="Tori Hana" class="logo-img">
+      </a>
+    </div>
+    <nav class="menu" id="main-menu">
+      <ul>
+       
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="#promociones">Promociones</a></li>
+        <li><a href="mascota.html">Mascota</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:+50312345678" class="phone-btn" aria-label="Llamar"><i class="fas fa-phone"></i></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 🌸 HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Auténtica cocina japonesa<br>con alma moderna</h1>
+        <p class="hero-subtitle">Ramen artesanal, bento fresco, yakitori a la parrilla y más.</p>
+        <div class="hero-buttons">
+          <a href="#reservas" class="btn-primary">Reservar Mesa</a>
+          <a href="menu.html" class="btn-secondary">Ver Menú</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/imagenes de comida/hoc-bowl.png" alt="Ramen artesanal de Tori Hana" class="bowl-animated">
+      </div>
+    </section>
+
+    <!-- 🍣 MENÚ -->
+    <section id="menu" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestro <span class="highlight">Menú Estrella</span></h2>
+          <p class="section-subtitle">Platos creados con ingredientes frescos y técnicas ancestrales</p>
+        </div>
+        <div class="menu-tabs">
+          <button class="tab-btn active" data-tab="ramen">Ramen</button>
+          <button class="tab-btn" data-tab="bento">Bento</button>
+          <button class="tab-btn" data-tab="yakitori">Yakitori</button>
+          <button class="tab-btn" data-tab="postres">Postres</button>
+        </div>
+        <div class="menu-content">
+          <!-- RAMEN -->
+          <div class="menu-tab-content active" id="ramen-content">
+            <div class="menu-grid">
+              <div class="menu-card scroll-reveal">
+                <div class="menu-image">
+                  <img src="/ramen1.png" alt="Ramen Shoyu">
+                </div>
+                <div class="menu-info">
+                  <h3>Ramen Shoyu</h3>
+                  <p>Caldo de pollo 18h, huevo marinado, cerdo chashu</p>
+                  <div class="menu-price">$12.99</div>
+                </div>
+              </div>
+              <div class="menu-card scroll-reveal">
+                <div class="menu-image">
+                  <img src="/ramen2.jpg" alt="Ramen Miso">
+                </div>
+                <div class="menu-info">
+                  <h3>Ramen Miso</h3>
+                  <p>Caldo de miso, maíz, mantequilla, brotes de soja</p>
+                  <div class="menu-price">$13.99</div>
+                </div>
+              </div>
+              <div class="menu-card scroll-reveal">
+                <div class="menu-image">
+                  <img src="/yakitori.png" alt="Yakitori Mixto">
+                </div>
+                <div class="menu-info">
+                  <h3>Yakitori Mixto</h3>
+                  <p>Brochetas de pollo, cebolla, pimiento, salsa tare</p>
+                  <div class="menu-price">$11.99</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BENTO -->
+          <div class="menu-tab-content" id="bento-content">
+            <div class="menu-grid">
+              <div class="menu-card scroll-reveal">
+                <div class="menu-image">
+                  <img src="/bento salmon.png" alt="Bento de Salmón">
+                </div>
+                <div class="menu-info">
+                  <h3>Bento de Salmón</h3>
+                  <p>Salmón teriyaki, arroz, ensalada, tempura</p>
+                  <div class="menu-price">$14.99</div>
+                </div>
+              </div>
+              <div class="menu-card scroll-reveal">
+                <div class="menu-image">
+                  <img src="/bento de pollo.webp" alt="Bento de Pollo">
+                </div>
+                <div class="menu-info">
+                  <h3>Bento de Pollo</h3>
+                  <p>Pollo yakitori, arroz, gyoza, ensalada fresca</p>
+                  <div class="menu-price">$13.99</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- YAKITORI -->
+          <div class="menu-tab-content" id="yakitori-content">
+            <div class="menu-grid">
+              <div class="menu-card scroll-reveal">
+                <div class="menu-image">
+                  <img src="/yakitori.png" alt="Yakitori de Pollo">
+                </div>
+                <div class="menu-info">
+                  <h3>Yakitori de Pollo</h3>
+                  <p>Brochetas de muslo de pollo con salsa tare</p>
+                  <div class="menu-price">$9.99</div>
+                </div>
+              </div>
+              <div class="menu-card scroll-reveal">
+                <div class="menu-image">
+                  <img src="/imagenes de comida/comida2sin fondo.png" alt="Yakitori de Verduras">
+                </div>
+                <div class="menu-info">
+                  <h3>Yakitori de Verduras</h3>
+                  <p>Pimiento, cebolla, champiñón y calabacín</p>
+                  <div class="menu-price">$8.99</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- POSTRES -->
+          <div class="menu-tab-content" id="postres-content">
+            <div class="menu-grid">
+              <div class="menu-card scroll-reveal">
+                <div class="menu-image">
+                  <img src="/mochi" alt="Mochi">
+                </div>
+                <div class="menu-info">
+                  <h3>Mochi</h3>
+                  <p>Postre tradicional japonés con relleno de fruta</p>
+                  <div class="menu-price">$5.99</div>
+                </div>
+              </div>
+              <div class="menu-card scroll-reveal">
+                <div class="menu-image">
+                  <img src="/dorayak" alt="Dorayaki">
+                </div>
+                <div class="menu-info">
+                  <h3>Dorayaki</h3>
+                  <p>Pancakes japoneses con relleno de anko</p>
+                  <div class="menu-price">$4.99</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ✅ Botón especial más abajo -->
+        <div class="text-center mt-4">
+          <a href="menu-completo.html" class="btn-special">Ver Menú Completo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📸 GALERÍA -->
+    <section id="galeria" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestro <span class="highlight">Ambiente</span></h2>
+          <p class="section-subtitle">Un espacio donde la tradición japonesa abraza la calidez salvadoreña</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item scroll-reveal"><img src="/imagenes/galeria-1.jpg" alt="Interior"></div>
+          <div class="gallery-item scroll-reveal"><img src="/imagenes/galeria-2.jpg" alt="Barra de sushi"></div>
+          <div class="gallery-item scroll-reveal"><img src="/imagenes/galeria-3.jpg" alt="Terraza"></div>
+          <div class="gallery-item scroll-reveal"><img src="/imagenes/galeria-4.jpg" alt="Decoración"></div>
+          <div class="gallery-item scroll-reveal"><img src="/imagenes/galeria-5.jpg" alt="Área privada"></div>
+          <div class="gallery-item scroll-reveal"><img src="/imagenes/galeria-6.jpg" alt="Cocina abierta"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📝 SOBRE NOSOTROS -->
+    <section id="sobre-nosotros" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><span class="highlight">Sobre Nosotros</span></h2>
+          <p class="section-subtitle">Pasión, tradición y sabor en cada detalle</p>
+        </div>
+        <div class="about-content">
+          <div class="about-text scroll-reveal">
+            <p>En Tori Hana, creemos que la verdadera cocina japonesa nace del respeto: por los ingredientes, por las estaciones, y por quien los disfruta.</p>
+            <p>Nuestros platos no buscan impresionar, sino equilibrar. Como un jardín zen, cada elemento tiene su lugar, su propósito, su silencio.</p>
+          </div>
+          <div class="about-image scroll-reveal">
+            <img src="/toriki sin fondoo.png" alt="Equipo de Tori Hana">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎁 PROMOCIONES -->
+    <section id="promociones" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestras <span class="highlight">Promociones</span></h2>
+          <p class="section-subtitle">Ofertas especiales para nuestros comensales</p>
+        </div>
+        <div class="promo-grid">
+          <div class="promo-card promo-1 scroll-reveal">
+            <div class="promo-image">
+              <img src="/imagenes/promociones/ejecutivo.jpg" alt="Menú Ejecutivo">
+            </div>
+            <div class="promo-content">
+              <h3>Menú Ejecutivo</h3>
+              <p>Lunes a viernes, 12pm - 3pm</p>
+              <div class="promo-price">$9.99</div>
+              <a href="#reservas" class="btn-small">Reservar</a>
+            </div>
+          </div>
+          <div class="promo-card promo-2 scroll-reveal">
+            <div class="promo-image">
+              <img src="/imagenes/promociones/sake-bento.jpg" alt="Sake & Bento">
+            </div>
+            <div class="promo-content">
+              <h3>Sake & Bento</h3>
+              <p>Martes y miércoles, cena</p>
+              <div class="promo-price">$16.99</div>
+              <a href="#reservas" class="btn-small">Reservar</a>
+            </div>
+          </div>
+          <div class="promo-card promo-3 scroll-reveal">
+            <div class="promo-image">
+              <img src="/imagenes/promociones/cumpleanos.jpg" alt="Celebraciones">
+            </div>
+            <div class="promo-content">
+              <h3>Celebraciones</h3>
+              <p>¡20% de descuento en cumpleaños!</p>
+              <div class="promo-price">20% OFF</div>
+              <a href="#reservas" class="btn-small">Reservar</a>
+            </div>
+          </div>
+          <div class="promo-card promo-4 scroll-reveal">
+            <div class="promo-image">
+              <img src="/imagenes/promociones/familia.jpg" alt="Menú Familiar">
+            </div>
+            <div class="promo-content">
+              <h3>Menú Familiar</h3>
+              <p>Para 4 personas, entrada, plato fuerte y postre</p>
+              <div class="promo-price">$39.99</div>
+              <a href="#reservas" class="btn-small">Reservar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🐾 MASCOTA -->
+    <section id="mascota" class="section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestra <span class="highlight">Mascota</span></h2>
+          <p class="section-subtitle">Conoce a Toriki, el espíritu guardián de Tori Hana</p>
+        </div>
+        <div class="mascota-content">
+          <div class="mascota-image scroll-reveal">
+            <img src="/SOLO.png" alt="Toriki" class="toriki-animated">
+          </div>
+          <div class="mascota-info scroll-reveal">
+            <h3>Toriki</h3>
+            <p>Según la leyenda, Toriki nació del vapor del primer ramen cocinado en nuestro templo.</p>
+            <!-- ✅ Botón especial -->
+            <a href="mascota.html" class="btn-special">Más sobre Toriki</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📜 HISTORIA -->
+    <section id="historia" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestra <span class="highlight">Historia</span></h2>
+          <p class="section-subtitle">El viaje de un sueño japonés en tierras salvadoreñas</p>
+        </div>
+        <div class="history-timeline">
+          <div class="timeline-item scroll-reveal">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-content">
+              <h3>Los primeros pasos</h3>
+              <p>El Chef Kenji llega a San Salvador con la misión de compartir la auténtica cocina japonesa.</p>
+            </div>
+          </div>
+          <div class="timeline-item scroll-reveal">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-content">
+              <h3>Apertura de Tori Hana</h3>
+              <p>Nace nuestro primer restaurante en el corazón de la ciudad.</p>
+            </div>
+          </div>
+          <div class="timeline-item scroll-reveal">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <h3>Expansión y reconocimiento</h3>
+              <p>Ampliamos nuestro espacio y recibimos el premio a Mejor Ramen de Centroamérica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📩 RESERVAS -->
+    <section id="reservas" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Reserva tu <span class="highlight">Mesa</span></h2>
+          <p class="section-subtitle">Disfruta de una experiencia inolvidable</p>
+        </div>
+        <div class="reservation-container">
+          <div class="reservation-info scroll-reveal">
+            <h3>Horarios</h3>
+            <ul class="hours-list">
+              <li><span>Lunes - Jueves:</span> 12pm - 9pm</li>
+              <li><span>Viernes - Sábado:</span> 12pm - 10pm</li>
+              <li><span>Domingo:</span> 12pm - 8pm</li>
+            </ul>
+            <h3 class="mt-4">Contacto</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Calle Sakura 123, San Salvador</p>
+            <p><i class="fas fa-phone"></i> +503 1234-5678</p>
+          </div>
+          <form class="reservation-form scroll-reveal" id="reservationForm">
+            <div class="form-group">
+              <input type="text" placeholder="Nombre completo" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Correo electrónico" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group half">
+                <input type="date" required>
+              </div>
+              <div class="form-group half">
+                <input type="time" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <select required>
+                <option value="" disabled selected>Personas</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Notas especiales"></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-width">Confirmar Reserva</button>
+          </form>
+        </div>
+        <div class="map-full scroll-reveal">
+          <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--  FOOTER --->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Tori Hana</h3>
+          <p>Auténtica cocina japonesa con un toque salvadoreño.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Menú</h4>
+          <ul>
+            <li><a href="#menu">Platos Estrella</a></li>
+            <li><a href="#promociones">Promociones</a></li>
+            <li><a href="menu.html">Menú Completo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+            <li><a href="#mascota">Nuestra Mascota</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#historia">Nuestra Historia</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Calle Sakura 123</li>
+            <li><i class="fas fa-phone"></i> +503 1234-5678</li>
+            <li><i class="fas fa-envelope"></i> hola@torihana.sv</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Tori Hana. Todos los derechos reservados.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 🧠 JavaScript -->
+  <script src="scrip.js"></script>
+  <!-- 🍃 HOJAS (contenedor) -->
+<div class="leaves-container" id="leavesContainer"></div>
+
+
+
+  
+</body>
+</html>
