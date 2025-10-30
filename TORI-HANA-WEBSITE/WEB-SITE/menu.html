@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Menú completo de Tori Hana — Ramen, sushi, yakitori, postres y más. Cocina japonesa auténtica en San Salvador." />
+  <title>Menú | Tori Hana</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/SOLO.png" type="image/x-icon" />
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Kaisei+Tokumin:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- CSS de Tori Hana -->
+  <link rel="stylesheet" href="Mnstyle.css" />
+</head>
+<body id="body">
+  <!-- 🔴 NAVBAR - Igual que index.html -->
+  <header class="header" id="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="/toriki sin fondoo.png" alt="Tori Hana" class="logo-img">
+      </a>
+    </div>
+    <nav class="menu" id="main-menu">
+      <ul>
+        <li><a href="index.HTML#inicio">Inicio</a></li>
+        <li><a href="index.HTML#galeria">Galería</a></li>
+        <li><a href="index.HTML#Sobre nosotros">Sobre Nosotros</a></li>
+        <li><a href="index.HTML#promociones">Promociones</a></li>
+        <li><a href="index.HTML#mascota">Mascota</a></li>
+        <li><a href="index.HTML#reservas">Reservas</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:+50312345678" class="phone-btn" aria-label="Llamar"><i class="fas fa-phone"></i></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 🍣 MENÚ COMPLETO -->
+    <section id="menu" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestro <span class="highlight">Menú</span></h2>
+          <p class="section-subtitle">Platos auténticos preparados con pasión y técnicas ancestrales</p>
+        </div>
+
+        <!-- ✅ Contador de carrito -->
+        <div class="cart-counter">
+          <p>Carrito: <span id="contador">0</span> platos</p>
+        </div>
+
+        <!-- 🍜 PLATOS EN GRID -->
+        <div class="menu-full-grid">
+          <!-- RAMEN -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/Comida 1Sin fondo.png" alt="Ramen">
+            </div>
+            <div class="menu-info">
+              <h3>Ramen</h3>
+              <p>Caldo a base de vegetales y hueso de cerdo, fideos, huevo cocido, cebollín, hongo shitake y trozos de naruto.</p>
+              <div class="menu-price">$7.00</div>
+              <button class="add-to-cart" data-price="7">Agregar</button>
+            </div>
+          </div>
+
+          <!-- NIGIRI -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida2sin fondo.png" alt="Nigiri">
+            </div>
+            <div class="menu-info">
+              <h3>Nigiri</h3>
+              <p>Arroz prensado con vinagre cubierto con una fina lámina de pescado fresco o mariscos.</p>
+              <div class="menu-price">$6.00</div>
+              <button class="add-to-cart" data-price="6">Agregar</button>
+            </div>
+          </div>
+
+          <!-- UDON -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida3sin fondo.png" alt="Udon">
+            </div>
+            <div class="menu-info">
+              <h3>Udon</h3>
+              <p>Fideos gruesos de trigo servidos en caldo caliente con vegetales, huevo y cebollín.</p>
+              <div class="menu-price">$8.00</div>
+              <button class="add-to-cart" data-price="8">Agregar</button>
+            </div>
+          </div>
+
+          <!-- TAKOYAKI -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida4sinfondo.png" alt="Takoyaki">
+            </div>
+            <div class="menu-info">
+              <h3>Takoyaki</h3>
+              <p>Bolas de masa rellenas con trozos de pulpo, cebolla, jengibre y salsa japonesa.</p>
+              <div class="menu-price">$4.00</div>
+              <button class="add-to-cart" data-price="4">Agregar</button>
+            </div>
+          </div>
+
+          <!-- TEMAKI -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida5dinfondo.png" alt="Temaki">
+            </div>
+            <div class="menu-info">
+              <h3>Temaki</h3>
+              <p>Cono de alga nori relleno con arroz, pescado, vegetales frescos y salsa de soya.</p>
+              <div class="menu-price">$4.00</div>
+              <button class="add-to-cart" data-price="4">Agregar</button>
+            </div>
+          </div>
+
+          <!-- DORAYAKI -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida6sinfondo.png" alt="Dorayaki">
+            </div>
+            <div class="menu-info">
+              <h3>Dorayaki</h3>
+              <p>Panqueques suaves rellenos con pasta dulce de frijol rojo tradicional japonés.</p>
+              <div class="menu-price">$4.00</div>
+              <button class="add-to-cart" data-price="4">Agregar</button>
+            </div>
+          </div>
+
+          <!-- BAKI -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida7sinfondo.png" alt="Baki">
+            </div>
+            <div class="menu-info">
+              <h3>Baki</h3>
+              <p>Panecillo japonés relleno de carne o vegetales, cocido al vapor hasta quedar esponjoso.</p>
+              <div class="menu-price">$4.00</div>
+              <button class="add-to-cart" data-price="4">Agregar</button>
+            </div>
+          </div>
+
+          <!-- DOMBURI -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida8sinfondo.png" alt="Domburi">
+            </div>
+            <div class="menu-info">
+              <h3>Domburi</h3>
+              <p>Tazón de arroz cubierto con carne, huevo, vegetales y salsa dulce japonesa.</p>
+              <div class="menu-price">$4.00</div>
+              <button class="add-to-cart" data-price="4">Agregar</button>
+            </div>
+          </div>
+
+          <!-- SOPA MISO -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida9sinfondo.png" alt="Sopa Miso">
+            </div>
+            <div class="menu-info">
+              <h3>Sopa Miso</h3>
+              <p>Caldo ligero preparado con pasta de miso, tofu, algas y cebollín fresco.</p>
+              <div class="menu-price">$4.00</div>
+              <button class="add-to-cart" data-price="4">Agregar</button>
+            </div>
+          </div>
+
+          <!-- TEMPURA DE CAMARÓN -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida10sinfondo.png" alt="Tempura de Camarón">
+            </div>
+            <div class="menu-info">
+              <h3>Tempura de Camarón</h3>
+              <p>Camarones cubiertos con masa ligera y fritos hasta quedar crujientes y dorados.</p>
+              <div class="menu-price">$4.00</div>
+              <button class="add-to-cart" data-price="4">Agregar</button>
+            </div>
+          </div>
+
+          <!-- YAKITORI -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida11sinfondo.png" alt="Yakitori">
+            </div>
+            <div class="menu-info">
+              <h3>Yakitori</h3>
+              <p>Brochetas de pollo asadas al carbón con salsa dulce y trozos de cebolla verde.</p>
+              <div class="menu-price">$4.00</div>
+              <button class="add-to-cart" data-price="4">Agregar</button>
+            </div>
+          </div>
+
+          <!-- GYOZA -->
+          <div class="menu-card scroll-reveal">
+            <div class="menu-image">
+              <img src="/imagenes de comida/comida12sinfondo.png" alt="Gyoza">
+            </div>
+            <div class="menu-info">
+              <h3>Gyoza</h3>
+              <p>Empanadillas rellenas de carne y vegetales, cocidas al vapor y doradas al sartén.</p>
+              <div class="menu-price">$4.00</div>
+              <button class="add-to-cart" data-price="4">Agregar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🎁 PROMOCIONES ESPECIALES -->
+        <div class="section-header" style="margin-top: 4rem;">
+          <h2 class="section-title">Nuestras <span class="highlight">Promociones</span></h2>
+          <p class="section-subtitle">Ofertas especiales para nuestros comensales</p>
+        </div>
+
+        <div class="promo-grid">
+          <div class="promo-card promo-1 scroll-reveal">
+            <div class="promo-image">
+              <img src="/imagenes de comida/como ramen mas gyoza.webp" alt="Combo Ramen + Gyoza">
+            </div>
+            <div class="promo-content">
+              <h3>Combo Ramen + Gyoza</h3>
+              <p>Disfruta nuestro ramen acompañado de 3 gyozas</p>
+              <div class="promo-price">$10.00</div>
+              <button class="btn-small">Agregar</button>
+            </div>
+          </div>
+          <div class="promo-card promo-2 scroll-reveal">
+            <div class="promo-image">
+              <img src="/imagenes de comida/barquito de sushi.png" alt="Sushi Especial">
+            </div>
+            <div class="promo-content">
+              <h3>Sushi Especial</h3>
+              <p>Rollo especial del chef, fresco y delicioso</p>
+              <div class="promo-price">$12.00</div>
+              <button class="btn-small">Agregar</button>
+            </div>
+          </div>
+          <div class="promo-card promo-3 scroll-reveal">
+            <div class="promo-image">
+              <img src="/imagenes de comida/Tako yaki doble.png" alt="Takoyaki Doble">
+            </div>
+            <div class="promo-content">
+              <h3>Takoyaki Doble</h3>
+              <p>2 porciones por el precio de 1</p>
+              <div class="promo-price">$7.00</div>
+              <button class="btn-small">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ⚫ FOOTER - Igual que index.html -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Tori Hana</h3>
+          <p>Auténtica cocina japonesa con un toque salvadoreño.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Menú</h4>
+          <ul>
+            <li><a href="#menu">Platos Estrella</a></li>
+            <li><a href="#promociones">Promociones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="index.html#sobre-nosotros">Sobre Nosotros</a></li>
+            <li><a href="index.html#mascota">Nuestra Mascota</a></li>
+            <li><a href="index.html#galeria">Galería</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Calle Sakura 123</li>
+            <li><i class="fas fa-phone"></i> +503 1234-5678</li>
+            <li><i class="fas fa-envelope"></i> hola@torihana.sv</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Tori Hana. Todos los derechos reservados.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/tori_hana.503" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/17eC3FYZE9/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 🛒 BOTÓN FLOTANTE Y MODAL DEL CARRITO (¡IMPORTANTE!) -->
+  <button id="cart-toggle" class="cart-float-btn" aria-label="Ver carrito">
+    <i class="fas fa-shopping-bag"></i>
+    <span id="cart-count-badge">0</span>
+  </button>
+
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-modal-content">
+      <div class="cart-header">
+        <h3>Tu Pedido</h3>
+        <button id="close-cart" class="close-btn">&times;</button>
+      </div>
+      <div id="cart-items" class="cart-items">
+        <p style="text-align:center; color:#888;">Tu carrito está vacío</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">Total: <span id="total-price">$0.00</span></div>
+        <button id="checkout-btn" class="checkout-btn">Ordenar Ahora</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🧠 JavaScript para menú -->
+  <script src="menu.js"></script>
+  
+</body>
+</html>
